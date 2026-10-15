@@ -1,0 +1,45 @@
+{
+  "repo": "https://github.com/Intellindust-AI-Lab/DEIMv2",
+  "repo_commit": "1d2ca42171570c713e78fc6a766ec5104b7f4724",
+  "hf_model": "Intellindust/DEIMv2_DINOv3_L_COCO",
+  "hf_revision": "6ce90ce18c14271c8ce145c35626d9a6544f881b",
+  "pretraining": "DINOv3 LVD1689M general web images, then COCO object detection; use complete official detector weights",
+  "training": {
+    "batch": 2,
+    "effective_batch": 16,
+    "seed": 3407,
+    "lr_classification": 0.0005,
+    "lr_detection": 0.0001,
+    "lr_backbone": 1e-05,
+    "weight_decay": 0.000125,
+    "clip_max_norm": 0.1,
+    "imgsz": 1280,
+    "precision": "BF16 train; FP32 valid",
+    "ema_decay": 0.9998,
+    "ema_warmups": 500,
+    "COCO_contiguous_rows": {
+      "0": 0,
+      "1": 0,
+      "2": 1,
+      "3": 2,
+      "5": 7,
+      "8": 5,
+      "9": 3
+    },
+    "unmapped_classes": [
+      4,
+      6,
+      7
+    ],
+    "RandomPhotometricDistort_p": 0.3,
+    "RandomIoUCrop_p": 0.3,
+    "fliplr": 0.5,
+    "minimum_total_epochs": 6,
+    "patience": 2,
+    "min_delta": 0.003
+  },
+  "submitted_epoch": 10,
+  "extra_validation_only_epoch": 11,
+  "stop_reason": "budget_before_next_epoch",
+  "early_stopping_reached": false
+}

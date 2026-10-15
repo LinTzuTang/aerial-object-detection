@@ -1,0 +1,50 @@
+[
+  {
+    "file": "urban_traffic.jpg",
+    "split": "test",
+    "image_id": "img_1ae8b7b991128bc7",
+    "display_confidence": 0.25,
+    "displayed_boxes": 36,
+    "image_sha256": "1fb7d89d6d3e26343f3ee03ca2bc6adab23f524576c25314dda2aab479ab7a39",
+    "source_image_sha256": "8f13d1d6251d8fc09878062cc281220d29b88f1970a10f54af2c4fe5124ff283",
+    "source_prediction_sha256": "ec64915b8b8932cbed235491d4a07302d2c842a40807cc936474031ac9e7764e",
+    "recipe_sha256": "3a9d35f82c1026e1db17630e1aac07992d3f0c2fb73623b6aaca312a5a49ec0e",
+    "public_submission": 57199616
+  },
+  {
+    "file": "low_light_traffic.jpg",
+    "split": "test",
+    "image_id": "img_2e9b763b691129bf",
+    "display_confidence": 0.25,
+    "displayed_boxes": 7,
+    "image_sha256": "6e61bb8ad25ab2f2a656b578e4b6a692e6b0df4404d7dbc30bfe5f8cfc4b5ba1",
+    "source_image_sha256": "b8b1f84336adb2f716dd161f74af76509355a5cc778b28cf2117261863b04fce",
+    "source_prediction_sha256": "ec64915b8b8932cbed235491d4a07302d2c842a40807cc936474031ac9e7764e",
+    "recipe_sha256": "3a9d35f82c1026e1db17630e1aac07992d3f0c2fb73623b6aaca312a5a49ec0e",
+    "public_submission": 57199616
+  },
+  {
+    "file": "bridge_traffic.jpg",
+    "split": "val",
+    "image_id": "img_4d40a3f55e8ddd87",
+    "display_confidence": 0.25,
+    "displayed_boxes": 20,
+    "image_sha256": "87ebc125c5fc2fbc22d77803118e87fe349bd731164ae1af4e30cdd4322c8d88",
+    "source_image_sha256": "1dcb4bf6ee2e3e65c86cf9720ac5620e66ac5a752b6562328d8b31c0cb363e23",
+    "source_prediction_sha256": "38ae8cc3845c848124d0e042c7e8d2c84f428a52fd8b2e495b18f51323ec290d",
+    "recipe_sha256": "3a9d35f82c1026e1db17630e1aac07992d3f0c2fb73623b6aaca312a5a49ec0e",
+    "public_submission": 57199616
+  },
+  {
+    "file": "crowded_night.jpg",
+    "split": "val",
+    "image_id": "img_8c313c2da1b4dad3",
+    "display_confidence": 0.25,
+    "displayed_boxes": 21,
+    "image_sha256": "912b33a12ebd65a2ed90d3fca58837cf76f41d2f557b2e59d1c5d69323adeb22",
+    "source_image_sha256": "83695944cb643ca0680288b1c9e45a6c5f4a8f9eba59c658f79fc845e2728b36",
+    "source_prediction_sha256": "38ae8cc3845c848124d0e042c7e8d2c84f428a52fd8b2e495b18f51323ec290d",
+    "recipe_sha256": "3a9d35f82c1026e1db17630e1aac07992d3f0c2fb73623b6aaca312a5a49ec0e",
+    "public_submission": 57199616
+  }
+]

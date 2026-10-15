@@ -1,0 +1,48 @@
+{
+  "task": "10-class aerial object detection",
+  "train_images": 4500,
+  "validation_images": 700,
+  "test_images": 1800,
+  "metric": "COCO AP at IoU 0.50:0.05:0.95",
+  "final": {
+    "validation_AP": 0.39301943615005774,
+    "validation_AP_small": 0.316568599855939,
+    "public_AP": 0.3501,
+    "kaggle_submission": 57199616,
+    "checkpoints": 5,
+    "prediction_sets": 6,
+    "deim_epoch": 10,
+    "validation_AP75": 0.4272642955719886,
+    "clahe_epoch": 5,
+    "submission_sha256": "ec64915b8b8932cbed235491d4a07302d2c842a40807cc936474031ac9e7764e"
+  },
+  "comparison": {
+    "best_single_public_AP": 0.31851,
+    "prior_four_pool_public_AP": 0.33955,
+    "prior_four_pool_valid_AP": 0.38316315462719697,
+    "prior_five_pool_public_AP": 0.34863,
+    "prior_five_pool_valid_AP": 0.3915804491893427,
+    "gain_over_prior_public": 0.00147,
+    "gain_over_best_submitted_single_public": 0.03159
+  },
+  "matched_CLAHE_training_effect": {
+    "AP": -0.002461382672964696,
+    "AP75": -0.003630092181020228,
+    "small_AP": -0.004939268975511446
+  },
+  "matched_updates_per_arm": 538,
+  "gpu_peaks_mib": {
+    "matched_YOLO_training": 8522.875,
+    "new_test_members": 2940.875
+  },
+  "selection_notes": [
+    "Only training images update model parameters",
+    "Calibration/audit halves were reused, including the second refinement round",
+    "24 cached-prediction calibration configurations, 8 full confirmations, 5 submitted candidates",
+    "Recipes fixed on validation before their test fusion; no public-driven recipe changes",
+    "Public feedback selects the final artifact; the public winner is not the highest-validation candidate",
+    "Final ensemble retains DEIM epoch10 and CLAHE epoch5; epoch11 DEIM is validation-only",
+    "Final refinement uses CPU fusion only, no new training or GPU inference"
+  ],
+  "source": "Recorded assignment experiment outputs; values preserved from the submission report"
+}

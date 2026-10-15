@@ -1,0 +1,16 @@
+ultralytics==8.4.173
+torch==2.11.0
+torchvision==0.26.0
+opencv-python-headless==5.0.0.93
+numpy==2.5.4
+PyYAML>=6.0
+Pillow==12.3.0
+pycocotools==2.0.11
+nvidia-ml-py==13.615.71
+faster-coco-eval>=1.6.7
+scipy
+calflops
+transformers
+safetensors
+tensorboard
+gdown==5.2.0

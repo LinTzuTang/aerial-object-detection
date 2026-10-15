@@ -1,0 +1,496 @@
+{
+  "model_parameters": [
+    [
+      "Parameter",
+      "Gentle branch",
+      "Fresh branch"
+    ],
+    [
+      "Initialization",
+      "Initial HW1 run: official weights; continuation: initial best",
+      "Official yolo26l.pt; independent optimizer"
+    ],
+    [
+      "Resolution / physical batch / nbs",
+      "960 / 4 / 64",
+      "1280 / 2 / 64"
+    ],
+    [
+      "Optimizer / initial LR",
+      "Initial: auto -> AdamW / 0.000714; continuation: AdamW / 0.0001",
+      "AdamW / 0.0003"
+    ],
+    [
+      "Schedule / weight decay",
+      "Cosine / 0.0005",
+      "Cosine / 0.0005"
+    ],
+    [
+      "Epochs / selected checkpoint",
+      "Initial: 30, best 22; continuation: 9, best 1",
+      "100 planned; stopped at 66; selected epoch 37"
+    ],
+    [
+      "Warmup / patience",
+      "Initial: 3 / 8; continuation: 1 / 8",
+      "5 / 0; stopped manually after stagnation"
+    ],
+    [
+      "Mosaic / scale / translate",
+      "Initial: 1.0 / 0.5 / 0.1; continuation: 0 / 0.2 / 0.1",
+      "0.3 / 0.2 / 0.05; close_mosaic=15"
+    ],
+    [
+      "HSV h/s/v",
+      "0.015 / 0.7 / 0.4",
+      "0.015 / 0.3 / 0.3"
+    ],
+    [
+      "Shared settings",
+      "Seed 3407; flip 0.5; MixUp/CutMix/Copy-Paste 0; native-resolution continuation loader",
+      "Same seed, flip and disabled mixing; no class-frequency loss weights"
+    ]
+  ],
+  "public_results": [
+    [
+      "Method",
+      "Train px",
+      "Inference px",
+      "Public AP"
+    ],
+    [
+      "YOLO11m",
+      "960",
+      "960",
+      "0.26594"
+    ],
+    [
+      "YOLO11m",
+      "960",
+      "1280",
+      "0.29138"
+    ],
+    [
+      "YOLO11m; confidence 0.01",
+      "960",
+      "1280",
+      "0.29023"
+    ],
+    [
+      "YOLO11m; confidence 0.05",
+      "960",
+      "1280",
+      "0.28612"
+    ],
+    [
+      "YOLO11m; confidence 0.10",
+      "960",
+      "1280",
+      "0.28158"
+    ],
+    [
+      "YOLO26m",
+      "960",
+      "1280",
+      "0.29044"
+    ],
+    [
+      "D-FINE-M",
+      "960",
+      "960",
+      "0.25063"
+    ],
+    [
+      "YOLO26l initial",
+      "960",
+      "1280",
+      "0.29918"
+    ],
+    [
+      "YOLO26l initial",
+      "960",
+      "960",
+      "0.27320"
+    ],
+    [
+      "RT-DETR R50vd; Objects365 -> COCO",
+      "640",
+      "640",
+      "0.24639"
+    ],
+    [
+      "YOLO26l initial; max 500 detections",
+      "960",
+      "1280",
+      "0.29834"
+    ],
+    [
+      "YOLO26l initial; overlapping tiles / max 500",
+      "960",
+      "Tiles -> 960",
+      "0.29365"
+    ],
+    [
+      "YOLO26l gentle continuation",
+      "960",
+      "1280",
+      "0.30215"
+    ],
+    [
+      "YOLO26l mixed-crop fine-tune",
+      "960",
+      "1280",
+      "0.30127"
+    ],
+    [
+      "YOLO26l high-resolution fine-tune (10 epochs)",
+      "1280",
+      "1280",
+      "0.29271"
+    ],
+    [
+      "RF-DETR-L 2026",
+      "704",
+      "704",
+      "0.23232"
+    ],
+    [
+      "YOLO26l high-resolution + small crops (15 epochs)",
+      "1280",
+      "1280",
+      "0.29626"
+    ],
+    [
+      "YOLO26l gentle; stricter bicycle NMS",
+      "960",
+      "1280",
+      "0.30216"
+    ],
+    [
+      "YOLO26l gentle; single-model best",
+      "960",
+      "1536 + flip",
+      "0.31851"
+    ],
+    [
+      "YOLO26l fresh initialization; epoch 37",
+      "1280",
+      "1536 + flip",
+      "0.30650"
+    ],
+    [
+      "YOLO26l P2 head",
+      "960",
+      "1536 + flip",
+      "0.27881"
+    ],
+    [
+      "Gentle + Fresh; two-view WBF IoU 0.70",
+      "960 / 1280",
+      "1536 + flip",
+      "0.33266"
+    ],
+    [
+      "Three-view WBF IoU 0.70; add Gentle1280",
+      "960 / 1280",
+      "1280/1536 + flip",
+      "0.33574"
+    ],
+    [
+      "Four-view WBF IoU 0.75; previous submission",
+      "960 / 1280",
+      "1280/1536 + flip",
+      "0.33877"
+    ],
+    [
+      "Four-view WBF; mosaic 0.3 epoch 10 replaces Fresh1536",
+      "960 / 1280",
+      "1280/1536 + flip",
+      "0.33955"
+    ],
+    [
+      "YOLO26l original-image control; fixed epoch5",
+      "1280",
+      "1536 + flip",
+      "0.31736"
+    ],
+    [
+      "YOLO26l CLAHE5; CLAHE input",
+      "1280",
+      "1536 + flip",
+      "0.31639"
+    ],
+    [
+      "CLAHE YOLO; 1280/1536 flip WBF",
+      "1280",
+      "1280/1536 + flip",
+      "0.32336"
+    ],
+    [
+      "Four-view WBF; CLAHE replaces mosaic member",
+      "960 / 1280",
+      "1280/1536 + flip",
+      "0.33906"
+    ],
+    [
+      "Five-view WBF; add DEIMv2-L",
+      "960 / 1280",
+      "1280/1536 + flip",
+      "0.34863"
+    ],
+    [
+      "Six-pool WBF; CLAHE w0.25, IoU0.70",
+      "960 / 1280",
+      "1280/1536 + flip",
+      "0.34968"
+    ],
+    [
+      "Six-pool WBF; original5 w0.25, IoU0.70",
+      "960 / 1280",
+      "1280/1536 + flip",
+      "0.34946"
+    ],
+    [
+      "Six-pool WBF; original5 w0.5, IoU0.75",
+      "960 / 1280",
+      "1280/1536 + flip",
+      "0.35006"
+    ],
+    [
+      "Six-pool WBF; CLAHE w0.125, IoU0.70",
+      "960 / 1280",
+      "1280/1536 + flip",
+      "0.34926"
+    ],
+    [
+      "Final six-pool WBF; CLAHE w0.5, IoU0.75",
+      "960 / 1280",
+      "1280/1536 + flip",
+      "0.35010"
+    ]
+  ],
+  "validation_results": [
+    [
+      "Method",
+      "Inference",
+      "Valid AP",
+      "AP-small"
+    ],
+    [
+      "Gentle; max300",
+      "1280",
+      "0.33757",
+      "0.26512"
+    ],
+    [
+      "Gentle; larger inference + flip",
+      "1536 + flip",
+      "0.35351",
+      "0.29044"
+    ],
+    [
+      "1280 fine-tune; 10 epochs",
+      "1280",
+      "0.33574",
+      "0.25860"
+    ],
+    [
+      "1280 + small crops; 15 epochs",
+      "1280",
+      "0.33942",
+      "0.26364"
+    ],
+    [
+      "Gamma/exposure training",
+      "1536 + flip",
+      "0.35179",
+      "0.28203"
+    ],
+    [
+      "Class-frequency loss weighting",
+      "1536 + flip",
+      "0.35003",
+      "0.28061"
+    ],
+    [
+      "P2 head; best epoch 25",
+      "1536 + flip",
+      "0.31129",
+      "0.25473"
+    ],
+    [
+      "Gamma0.8 inference confirmation",
+      "1536 + flip",
+      "0.35287",
+      "0.29043"
+    ],
+    [
+      "Two-model WBF",
+      "1536 + flip",
+      "0.37190",
+      "0.29838"
+    ],
+    [
+      "Three-view WBF; add Gentle1280",
+      "1280/1536 + flip",
+      "0.37707",
+      "0.30134"
+    ],
+    [
+      "Previous four-view WBF",
+      "1280/1536 + flip",
+      "0.38066",
+      "0.30439"
+    ],
+    [
+      "Fresh37 baseline",
+      "1536 + flip",
+      "0.34290",
+      "0.26532"
+    ],
+    [
+      "Mosaic 0.3 continuation; fixed epoch 10",
+      "1536 + flip",
+      "0.34391",
+      "0.27035"
+    ],
+    [
+      "Mosaic 0 continuation; fixed epoch 10",
+      "1536 + flip",
+      "0.34347",
+      "0.26833"
+    ],
+    [
+      "Prior best: mosaic 0.3 replacement",
+      "1280/1536 + flip",
+      "0.38316",
+      "0.30679"
+    ],
+    [
+      "Four-view: mosaic 0 replacement",
+      "1280/1536 + flip",
+      "0.38305",
+      "0.30718"
+    ],
+    [
+      "Add clean1536 weight 0.25; not submitted",
+      "1280/1536 + flip",
+      "0.38375",
+      "0.30792"
+    ],
+    [
+      "DEIMv2-L original recipe; 1 epoch + NMS",
+      "1280",
+      "0.03135",
+      "0.02053"
+    ],
+    [
+      "DEIM revised; selected epoch 10",
+      "1280 native",
+      "0.31369",
+      "0.23145"
+    ],
+    [
+      "DEIM revised; same EMA + NMS0.70",
+      "1280",
+      "0.31400",
+      "0.23236"
+    ],
+    [
+      "DEIM extra; epoch 11; valid only",
+      "1280 native",
+      "0.31444",
+      "0.23200"
+    ],
+    [
+      "Extra DEIM in fixed five-view WBF; valid only",
+      "1280/1536 + flip",
+      "0.39170",
+      "0.31282"
+    ],
+    [
+      "Train original / valid original",
+      "1536 + flip",
+      "0.35806",
+      "0.28870"
+    ],
+    [
+      "Train original / valid CLAHE",
+      "1536 + flip",
+      "0.35456",
+      "0.28500"
+    ],
+    [
+      "Train CLAHE / valid original",
+      "1280 + flip",
+      "0.34654",
+      "0.26849"
+    ],
+    [
+      "Train CLAHE / valid CLAHE",
+      "1280 + flip",
+      "0.34813",
+      "0.27025"
+    ],
+    [
+      "Train CLAHE / valid original",
+      "1536 + flip",
+      "0.35560",
+      "0.28376"
+    ],
+    [
+      "Train CLAHE / valid CLAHE",
+      "1536 + flip",
+      "0.35677",
+      "0.28575"
+    ],
+    [
+      "CLAHE YOLO; 1280/1536 flip WBF",
+      "1280/1536 + flip",
+      "0.36726",
+      "0.29507"
+    ],
+    [
+      "Four-view WBF; CLAHE replaces mosaic member",
+      "1280/1536 + flip",
+      "0.38032",
+      "0.30707"
+    ],
+    [
+      "Five-view WBF; add DEIMv2-L",
+      "1280/1536 + flip",
+      "0.39158",
+      "0.31288"
+    ],
+    [
+      "Six-pool WBF; CLAHE w0.25, IoU0.70",
+      "1280/1536 + flip",
+      "0.39351",
+      "0.31584"
+    ],
+    [
+      "Six-pool WBF; original5 w0.25, IoU0.70",
+      "1280/1536 + flip",
+      "0.39365",
+      "0.31626"
+    ],
+    [
+      "Six-pool WBF; original5 w0.5, IoU0.75",
+      "1280/1536 + flip",
+      "0.39320",
+      "0.31668"
+    ],
+    [
+      "Six-pool WBF; CLAHE w0.125, IoU0.70",
+      "1280/1536 + flip",
+      "0.39306",
+      "0.31478"
+    ],
+    [
+      "Final six-pool WBF; CLAHE w0.5, IoU0.75",
+      "1280/1536 + flip",
+      "0.39302",
+      "0.31657"
+    ]
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "repo": "https://github.com/Intellindust-AI-Lab/DEIMv2",
+  "repo_commit": "1d2ca42171570c713e78fc6a766ec5104b7f4724",
+  "hf_model": "Intellindust/DEIMv2_DINOv3_L_COCO",
+  "hf_revision": "6ce90ce18c14271c8ce145c35626d9a6544f881b",
+  "pretraining": "DINOv3 LVD1689M general web images, then COCO object detection; use complete official detector weights",
+  "training": {
+    "epochs": 15,
+    "revision_epochs": 3,
+    "comparison_epochs_per_arm": 2,
+    "batch": 2,
+    "effective_batch": 16,
+    "seed": 3407,
+    "comparison_seed": 13407,
+    "lr_classification": 0.0005,
+    "lr_detection": 0.0001,
+    "lr_backbone": 1e-05,
+    "weight_decay": 0.000125,
+    "clip_max_norm": 0.1,
+    "warmup_epochs": 0.25,
+    "final_lr_factor": 0.1,
+    "imgsz": 1280,
+    "precision": "BF16 train; FP32 valid",
+    "ema_decay": 0.9998,
+    "ema_warmups": 500,
+    "COCO_contiguous_rows": {
+      "0": 0,
+      "1": 0,
+      "2": 1,
+      "3": 2,
+      "5": 7,
+      "8": 5,
+      "9": 3
+    },
+    "unmapped_classes": [
+      4,
+      6,
+      7
+    ],
+    "COCO_background_embedding": "80 to 10",
+    "mosaic": 0,
+    "mixup": 0,
+    "copyblend": 0,
+    "RandomPhotometricDistort_p": 0.3,
+    "RandomIoUCrop_p": 0.3,
+    "fliplr": 0.5,
+    "matcher_change_epoch": 10000,
+    "augmentation_schedule": "Constant across these five recipe epochs; no negative stop epoch",
+    "terminal_checkpoint_selection": "Best full-valid native1280 canonicalAP; patience2 with min_delta.003; minimum6totalepochs",
+    "minimum_total_epochs": 6,
+    "patience": 2,
+    "min_delta": 0.003,
+    "continuation_schedule": "Preserve saved optimizer base_lr and continue previous cosine; elapsed 6+1024/2250 passes of original13-pass continuation. Restart shuffled full image pass with actual extra exposure recorded.",
+    "data_workers": 0,
+    "host_memory_policy": "USE_TF=0, USE_FLAX=0, workers0; record host RAM; model numerical recipe unchanged",
+    "schedule_elapsed_passes": 6.455111111111111,
+    "schedule_total_passes": 13
+  },
+  "evaluation": {
+    "views": [
+      "original valid"
+    ],
+    "primary_postprocess": "Native DETR top300, confidence.001, no NMS",
+    "secondary_postprocess": "Same fixed class NMS.70 for every arm/view on CPU after download",
+    "canonical": "isolated pycocotools2.0.11, maxDets[1,10,100]",
+    "cal_audit": "Choose processed/original view on previously reused cal350 before scoring audit350; not independent holdouts",
+    "metrics": [
+      "AP",
+      "AP75",
+      "AP-small",
+      "per-class AP"
+    ],
+    "CLAHE_practical_gate": ">=.003 full and reused audit improvement over matched A on original valid, and small_AP loss <=.001",
+    "Kaggle_gate": "Also exceed matched Gentle1280 original-valid AP by >=.01 on full and reused audit before any test stage",
+    "Gentle1280_AP": 0.33757012326094155,
+    "Gentle1280_audit_AP": 0.332173491552522,
+    "no_test_parameter_tuning": true,
+    "checkpoint_selection": "Best full-valid native1280 AP",
+    "downstream": "Assess DEIM adoption; develop five frozen candidates using valid only, then submit"
+  },
+  "annotation_sha256": {
+    "train": "61de79250da9a5b38ace42db195735b0e5dc18e51fdba9275e0d97612292a8aa",
+    "val": "7d26627ee0bc8a17bee58388343035632a07e39c8d0be0495e3c9f50dc591912"
+  },
+  "recovery_policy": {
+    "partial_full_checkpoints_at_update": [
+      128,
+      256
+    ],
+    "epoch_end_full_checkpoint_before_valid": true,
+    "local_SHA_ack_required_before_continuing": true,
+    "reason": "One monitor timeout previously aborted a live worker; now reconnect transient requests and follow artifact state independently of websocket lifetime",
+    "partial_resume_exact_loader_replay_guaranteed": false
+  },
+  "partial_resume_policy": "Preserve model/EMA/AdamW and actual counters; validate recovered partial model, then begin a new shuffled full pass. Do not claim exact remaining-image replay. Extra partial exposure remains in counters and is excluded from completed-whole-epoch count."
+}

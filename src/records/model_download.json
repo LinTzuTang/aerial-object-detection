@@ -1,0 +1,31 @@
+{
+  "archive": "hw1_r12946009_models_public035010.zip",
+  "bytes": 317535211,
+  "sha256": "1b7b8769d1b8ab2509719f052a9494775e42708a251d3ae1fb6416a4eb1bc4d1",
+  "url": null,
+  "destination": "../checkpoints",
+  "archive_prefix": "hw1_r12946009_models/",
+  "models": {
+    "best.pt": {
+      "bytes": 53032677,
+      "sha256": "bbaf78e4e62269cb84f8a47381e93e0967e90721a9bab3e98efce7f49a482d49"
+    },
+    "clahe_epoch5.pt": {
+      "bytes": 53164701,
+      "sha256": "1bb231eaa93013f66522a95d8f95047b662f973ca73ac1c79c269bdd4e192985"
+    },
+    "deim_best_ema.pth": {
+      "bytes": 130875934,
+      "sha256": "83d009c280e9ce25372b3f13a0f4206ba717b098ef8cbe5b2d351f57c54bdd4b"
+    },
+    "fresh_epoch37.pt": {
+      "bytes": 53186493,
+      "sha256": "24e09350d1529ffc777f36cd94f02e419988572aac129ddb20ec03c8eb4e93eb"
+    },
+    "mosaic03_epoch10.pt": {
+      "bytes": 53163727,
+      "sha256": "ff17fefc698242c85f413aa1671ae6e05cbdfc35bdd657ef3e78fef388d6e1fb"
+    }
+  },
+  "source_status": "No model download URL is published in this portfolio. Supply a separately obtained matching ZIP or authorized Drive file URL, or use the retraining workflow."
+}

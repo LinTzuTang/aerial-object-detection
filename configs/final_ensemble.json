@@ -1,0 +1,85 @@
+{
+  "members": [
+    {
+      "key": "gentle1536",
+      "kind": "yolo",
+      "checkpoint": "../checkpoints/best.pt",
+      "checkpoint_sha256": "bbaf78e4e62269cb84f8a47381e93e0967e90721a9bab3e98efce7f49a482d49",
+      "size": 1536,
+      "flip": true,
+      "processed": false,
+      "array_inputs": false,
+      "checkpoint_key": "gentle"
+    },
+    {
+      "key": "gentle1280",
+      "kind": "yolo",
+      "checkpoint": "../checkpoints/best.pt",
+      "checkpoint_sha256": "bbaf78e4e62269cb84f8a47381e93e0967e90721a9bab3e98efce7f49a482d49",
+      "size": 1280,
+      "flip": true,
+      "processed": false,
+      "array_inputs": false,
+      "checkpoint_key": "gentle"
+    },
+    {
+      "key": "mosaic1536",
+      "kind": "yolo",
+      "checkpoint": "../checkpoints/mosaic03_epoch10.pt",
+      "checkpoint_sha256": "ff17fefc698242c85f413aa1671ae6e05cbdfc35bdd657ef3e78fef388d6e1fb",
+      "size": 1536,
+      "flip": true,
+      "processed": false,
+      "array_inputs": false,
+      "checkpoint_key": "control"
+    },
+    {
+      "key": "fresh1280",
+      "kind": "yolo",
+      "checkpoint": "../checkpoints/fresh_epoch37.pt",
+      "checkpoint_sha256": "24e09350d1529ffc777f36cd94f02e419988572aac129ddb20ec03c8eb4e93eb",
+      "size": 1280,
+      "flip": true,
+      "processed": false,
+      "array_inputs": false,
+      "checkpoint_key": "fresh"
+    },
+    {
+      "key": "deim_nms070",
+      "kind": "deim",
+      "checkpoint": "../checkpoints/deim_best_ema.pth",
+      "checkpoint_sha256": "83d009c280e9ce25372b3f13a0f4206ba717b098ef8cbe5b2d351f57c54bdd4b",
+      "size": 1280,
+      "flip": false,
+      "processed": false,
+      "nms": true,
+      "array_inputs": true,
+      "checkpoint_key": "deim"
+    },
+    {
+      "key": "clahe1536_clahe",
+      "kind": "yolo",
+      "checkpoint": "../checkpoints/clahe_epoch5.pt",
+      "checkpoint_sha256": "1bb231eaa93013f66522a95d8f95047b662f973ca73ac1c79c269bdd4e192985",
+      "size": 1536,
+      "flip": true,
+      "processed": true,
+      "array_inputs": true,
+      "checkpoint_key": "clahe"
+    }
+  ],
+  "weights": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "iou": 0.75,
+  "conf_type": "box_and_model_avg",
+  "skip_box_thr": 0.001,
+  "cap": 300,
+  "sample_sha256": "54ea47c33cde0602ef545ec62cfe6bfb9a240b15a3972db8d2d4327494f8fd59",
+  "submission_sha256": "ec64915b8b8932cbed235491d4a07302d2c842a40807cc936474031ac9e7764e"
+}
